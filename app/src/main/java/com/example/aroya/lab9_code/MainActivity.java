@@ -248,10 +248,14 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public boolean onLongClick(View view){
-                userList.remove(getAdapterPosition());
-                userStatus.remove(getAdapterPosition());
-                userName.remove(getAdapterPosition());
-                notifyItemRemoved(getAdapterPosition());
+                switch (mode){
+                    case user:
+                        userList.remove(getAdapterPosition());
+                        userStatus.remove(getAdapterPosition());
+                        userName.remove(getAdapterPosition());
+                        notifyItemRemoved(getAdapterPosition());
+                        break;
+                }
                 return true;
             }
         }
